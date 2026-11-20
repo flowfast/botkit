@@ -1,6 +1,6 @@
 {
   "name": "botkit",
-  "version": "0.7.6",
+  "version": "0.7.6-kaiten.1",
   "description": "Building blocks for Building Bots",
   "main": "lib/Botkit.js",
   "types": "lib/Botkit.d.ts",
@@ -20,7 +20,6 @@
     "async": "^2.6.1",
     "back": "^1.0.2",
     "body-parser": "^1.18.3",
-    "botbuilder": "^3.16.0",
     "botkit-studio-sdk": "^1.0.8",
     "chalk": "^2.4.1",
     "ciscospark": "^1.48.0",
@@ -56,6 +55,7 @@
     "pretest:disabled": "npm run lint",
     "lint": "eslint .",
     "test": "jest",
+    "test:slack": "node --test test/legacy/security-slack.test.js",
     "test:facebook": "jest test/facebook --coverage",
     "test-watch": "jest --watch"
   },
@@ -64,10 +64,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/howdyai/botkit.git"
+    "url": "https://github.com/flowfast/botkit.git"
   },
   "bugs": {
-    "url": "https://github.com/howdyai/botkit/issues"
+    "url": "https://github.com/flowfast/botkit/issues"
   },
   "homepage": "http://howdy.ai/botkit",
   "keywords": [

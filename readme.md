@@ -1,3 +1,26 @@
+# Kaiten Botkit 0.7.6 fork
+
+This branch starts from the source commit of the published Botkit 0.7.6 package:
+`a3208493e7a06ac5f366b6b45040f50c0a32db53`.
+
+The Microsoft Bot Framework adapter (`botframeworkbot`) and its `botbuilder`
+dependency have been removed. Kaiten's Slack application uses `slackbot`, whose
+implementation is unchanged. Other adapters are retained.
+
+Removing BotBuilder also removes its nested npm installation and bundled
+`skills-validator` package. This does not address every vulnerability in the
+remaining legacy dependencies. The consuming application must keep its own
+dependency lockfile and scan the final image.
+
+Use Node.js 24 to run the focused Slack compatibility checks:
+
+```sh
+npm run test:slack
+```
+
+The upstream documentation below is retained for reference. The upstream project
+is archived; security fixes for this branch are maintained in this fork.
+
 # Botkit Legacy Version
 
 This is the maintenance branch for the legacy version of Botkit (< 0.7.4).

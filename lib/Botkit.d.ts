@@ -7,7 +7,6 @@ declare namespace botkit {
   function webexbot(configuration: WebexConfiguration): WebexController;
   function twilioipmbot(configuration: TwilioIPMConfiguration): TwilioIPMController;
   function twiliosmsbot(configuration: TwilioSMSConfiguration): TwilioSMSController;
-  function botframeworkbot(configuration: BotFrameworkConfiguration): BotFrameworkController;
   function teamsbot(configuration: TeamsConfiguration): TeamsController;
   function consolebot(configuration: ConsoleConfiguration): ConsoleController;
   function jabberbot(configuration: JabberConfiguration): JabberController;
@@ -31,19 +30,6 @@ declare namespace botkit {
 
     // abstract function
     send(src: M, cb?: (err: Error, res?: any) => void): void;
-  }
-  interface BotFrameworkBot extends Bot<BotFrameworkSpawnConfiguration, BotFrameworkMessage> {
-  }
-  interface BotFrameworkConfiguration extends Configuration {
-  }
-  interface BotFrameworkController extends Controller<BotFrameworkSpawnConfiguration, BotFrameworkMessage, BotFrameworkBot> {
-    createWebhookEndpoints(webserver: any, bot: BotFrameworkBot, cb?: () => void): this;
-  }
-  interface BotFrameworkMessage extends Message {
-  }
-  interface BotFrameworkSpawnConfiguration {
-    appId: string;
-    appPassword: string;
   }
   interface Channel {
     id: string;
